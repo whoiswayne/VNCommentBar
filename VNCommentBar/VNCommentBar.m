@@ -48,10 +48,10 @@
                                selector:@selector(keyboardWillChangeFrame:)
                                    name:UIKeyboardWillChangeFrameNotification
                                  object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(textDidChange:)
-                                                     name:UITextViewTextDidChangeNotification
-                                                   object:nil];
+        [notificationCenter addObserver:self
+                               selector:@selector(textDidChange:)
+                                   name:UITextViewTextDidChangeNotification
+                                 object:nil];
     }
     
     return self;
@@ -98,7 +98,6 @@
                                                                         kTextViewPaddingTop,
                                                                         [UIScreen mainScreen].bounds.size.width - kTextViewPaddingLeft - kTextViewPaddingRight - kButtonWidth - kButtonPaddingRight, kTextViewHeight)];
     textView.backgroundColor = [UIColor colorWithRed:.85 green:.85 blue:.85 alpha:1.0f];
-    textView.delegate = self;
     textView.layer.cornerRadius = 3;
     textView.font = [UIFont systemFontOfSize:13.0f];
     textView.textColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:1.0f];
